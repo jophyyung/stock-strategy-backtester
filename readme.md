@@ -9,7 +9,7 @@ In active development. Phase 1 complete.
 ## Progress
 
 - [x] **Phase 1: Data Pipeline** — Download and store 5-year price history for multiple tickers in SQLite
-- [ ] Phase 2: Backtest Engine — Moving average crossover strategy
+- [x] **Phase 2: Backtest Engine** — Moving average crossover strategy with look-ahead-bias-free returns
 - [ ] Phase 3: Performance Metrics — Sharpe ratio, max drawdown, win rate
 - [ ] Phase 4: Multiple Strategies — RSI, Bollinger Bands
 - [ ] Phase 5: Interactive Dashboard — Streamlit interface
@@ -51,6 +51,13 @@ Clone the repository, create a virtual environment, install dependencies, and ru
 - Supports multiple tickers across US and Hong Kong markets (AAPL, MSFT, GOOGL, 0700.HK, 0005.HK)
 - Idempotent design — safe to re-run; refreshes existing data without creating duplicates
 - Adjusted prices (handles stock splits and dividends automatically)
+## Features (Phase 2)
+
+- Implements the classic 50/200-day moving average crossover strategy ("golden cross" / "death cross")
+- Backtests strategies on historical data with proper look-ahead bias prevention (signal shifting)
+- Computes equity curve, daily returns, and trade count
+- Compares strategy performance against a buy-and-hold benchmark
+- Modular design: strategy logic and simulation logic are separated for easy extension
 
 ## About
 
