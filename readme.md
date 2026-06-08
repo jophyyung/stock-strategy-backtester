@@ -11,7 +11,7 @@ In active development. Phase 1 complete.
 - [x] **Phase 1: Data Pipeline** — Download and store 5-year price history for multiple tickers in SQLite
 - [x] **Phase 2: Backtest Engine** — Moving average crossover strategy with look-ahead-bias-free returns
 - [x] **Phase 3: Performance Metrics** — Sharpe ratio, max drawdown, win rate, profit factor
-- [ ] Phase 4: Multiple Strategies — RSI, Bollinger Bands
+- [x] **Phase 4: Multiple Strategies** — RSI mean reversion, Bollinger Bands, multi-strategy comparison
 - [ ] Phase 5: Interactive Dashboard — Streamlit interface
 - [ ] Phase 6: Deployment
 
@@ -68,6 +68,15 @@ Clone the repository, create a virtual environment, install dependencies, and ru
   - Trade-level statistics: win rate, average win, average loss, profit factor
 - All metrics computed cleanly from the backtest output with proper guard clauses against edge cases (zero volatility, zero trades).
 - Strategy and buy-and-hold benchmark are compared side-by-side in the main output.
+## Features (Phase 4)
+
+- Three implemented trading strategies covering the major schools of technical analysis:
+  - **Moving Average Crossover** — classic trend-following strategy
+  - **RSI Mean Reversion** — momentum-based mean reversion using 14-day RSI
+  - **Bollinger Bands** — volatility-based mean reversion using rolling standard deviation
+- Multi-strategy comparison engine that runs all three strategies on each ticker and produces a side-by-side performance table
+- Comparison includes buy-and-hold benchmark to evaluate whether active strategies add value
+- Designed to demonstrate how strategy choice depends on asset behaviour: trend-following thrives on directional stocks; mean reversion thrives on range-bound, volatile stocks
 
 ## About
 
