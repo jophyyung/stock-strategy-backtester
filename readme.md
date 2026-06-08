@@ -10,7 +10,7 @@ In active development. Phase 1 complete.
 
 - [x] **Phase 1: Data Pipeline** — Download and store 5-year price history for multiple tickers in SQLite
 - [x] **Phase 2: Backtest Engine** — Moving average crossover strategy with look-ahead-bias-free returns
-- [ ] Phase 3: Performance Metrics — Sharpe ratio, max drawdown, win rate
+- [x] **Phase 3: Performance Metrics** — Sharpe ratio, max drawdown, win rate, profit factor
 - [ ] Phase 4: Multiple Strategies — RSI, Bollinger Bands
 - [ ] Phase 5: Interactive Dashboard — Streamlit interface
 - [ ] Phase 6: Deployment
@@ -58,6 +58,16 @@ Clone the repository, create a virtual environment, install dependencies, and ru
 - Computes equity curve, daily returns, and trade count
 - Compares strategy performance against a buy-and-hold benchmark
 - Modular design: strategy logic and simulation logic are separated for easy extension
+## Features (Phase 3)
+
+- Computes industry-standard quantitative performance metrics from any backtest:
+  - Total return and annualised return (CAGR)
+  - Annualised volatility (using square-root-of-time scaling)
+  - Annualised Sharpe ratio
+  - Maximum drawdown (peak-to-trough loss)
+  - Trade-level statistics: win rate, average win, average loss, profit factor
+- All metrics computed cleanly from the backtest output with proper guard clauses against edge cases (zero volatility, zero trades).
+- Strategy and buy-and-hold benchmark are compared side-by-side in the main output.
 
 ## About
 
