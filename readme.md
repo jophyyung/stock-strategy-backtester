@@ -12,7 +12,7 @@ In active development. Phase 1 complete.
 - [x] **Phase 2: Backtest Engine** — Moving average crossover strategy with look-ahead-bias-free returns
 - [x] **Phase 3: Performance Metrics** — Sharpe ratio, max drawdown, win rate, profit factor
 - [x] **Phase 4: Multiple Strategies** — RSI mean reversion, Bollinger Bands, multi-strategy comparison
-- [ ] Phase 5: Interactive Dashboard — Streamlit interface
+- [x] **Phase 5: Interactive Dashboard** — Streamlit web app for visual strategy
 - [ ] Phase 6: Deployment
 
 ## Tech Stack
@@ -77,6 +77,15 @@ Clone the repository, create a virtual environment, install dependencies, and ru
 - Multi-strategy comparison engine that runs all three strategies on each ticker and produces a side-by-side performance table
 - Comparison includes buy-and-hold benchmark to evaluate whether active strategies add value
 - Designed to demonstrate how strategy choice depends on asset behaviour: trend-following thrives on directional stocks; mean reversion thrives on range-bound, volatile stocks
+## Features (Phase 5)
+
+- Interactive Streamlit web dashboard for live strategy exploration
+- Sidebar controls for ticker selection, strategy choice, and parameter tuning via sliders
+- Live-rendered equity curves comparing strategy performance vs buy-and-hold
+- Price charts with strategy-specific indicators overlaid (moving averages, Bollinger Bands, RSI)
+- Performance metrics displayed as clean metric cards (return, Sharpe, drawdown, trade stats)
+- Automatic interpretation text highlighting whether the strategy outperformed the benchmark
+- Cached computations for fast interaction
 
 ## About
 
