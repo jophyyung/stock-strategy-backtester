@@ -86,7 +86,11 @@ Clone the repository, create a virtual environment, install dependencies, and ru
 - Performance metrics displayed as clean metric cards (return, Sharpe, drawdown, trade stats)
 - Automatic interpretation text highlighting whether the strategy outperformed the benchmark
 - Cached computations for fast interaction
+# Stock Strategy Backtester
 
+🚀 **Live Demo:** [https://your-url.streamlit.app](https://your-url.streamlit.app)
+
+A Python-based tool for backtesting trading strategies...
 ## About
 
 Built as a personal project to apply quantitative coursework (Probability, Statistics, Optimization Methods) to real financial market data.
