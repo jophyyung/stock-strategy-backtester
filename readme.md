@@ -88,7 +88,7 @@ Clone the repository, create a virtual environment, install dependencies, and ru
 - Cached computations for fast interaction
 # Stock Strategy Backtester
 
-🚀 **Live Demo:** [https://your-url.streamlit.app](https://your-url.streamlit.app)
+🚀 **Live Demo:** https://stock-strategy-backtester-eyvddr38zeu2s3apfqmz3j.streamlit.app/
 
 A Python-based tool for backtesting trading strategies...
 ## About
