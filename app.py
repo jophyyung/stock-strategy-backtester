@@ -24,7 +24,15 @@ from src.metrics import (
     trade_stats,
 )
 
+from pathlib import Path
+from src.data_loader import init_database, download_and_store
 
+# Bootstrap: if no database exists, create one with default tickers
+DB_PATH = Path(__file__).parent / "data" / "prices.db"
+if not DB_PATH.exists():
+    init_database()
+    for t in ["AAPL", "MSFT", "GOOGL", "0700.HK", "0005.HK"]:
+        download_and_store(t, period="5y")
 # ── Page setup ────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Stock Strategy Backtester",
