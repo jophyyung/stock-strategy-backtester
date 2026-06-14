@@ -13,7 +13,7 @@ In active development. Phase 1 complete.
 - [x] **Phase 3: Performance Metrics** — Sharpe ratio, max drawdown, win rate, profit factor
 - [x] **Phase 4: Multiple Strategies** — RSI mean reversion, Bollinger Bands, multi-strategy comparison
 - [x] **Phase 5: Interactive Dashboard** — Streamlit web app for visual strategy
-- [ ] Phase 6: Deployment
+- [x] **Phase 6: Stock Screener** — S&P 500 technical screening with RSI, MA crossover, and Bollinger filters
 
 ## Tech Stack
 
@@ -86,6 +86,14 @@ Clone the repository, create a virtual environment, install dependencies, and ru
 - Performance metrics displayed as clean metric cards (return, Sharpe, drawdown, trade stats)
 - Automatic interpretation text highlighting whether the strategy outperformed the benchmark
 - Cached computations for fast interaction
+## Features (Phase 6)
+
+- S&P 500 technical screener scanning 500+ stocks against quantitative filters
+- Filter types: RSI oversold/overbought, recent MA golden cross, Bollinger band penetration
+- Adjustable thresholds via Streamlit sliders for all filters
+- Ranked results with downloadable CSV output
+- Same look-ahead-bias-free methodology as the backtester
+- Wikipedia-scraped S&P 500 universe with automatic ticker normalisation
 # Stock Strategy Backtester
 
 🚀 **Live Demo:** https://stock-strategy-backtester-eyvddr38zeu2s3apfqmz3j.streamlit.app/
