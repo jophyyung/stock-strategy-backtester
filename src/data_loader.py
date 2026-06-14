@@ -143,3 +143,54 @@ def load_prices(ticker: str) -> pd.DataFrame:
     df = df.set_index("date")
 
     return df
+def bulk_download_and_store(tickers: list[str], period: str = "5y") -> dict:
+    """
+    Download and store price data for many tickers with error handling.
+
+    Failed tickers are logged but don't stop the overall process.
+
+    Args:
+        tickers: List of ticker symbols to download.
+        period: How much history to download (default 5 years).
+
+    Returns:
+        A summary dictionary:
+            {
+                "successful": [list of tickers that worked],
+                "failed": [list of tickers that failed],
+                "total": int
+            }
+    """
+    init_database()
+
+    successful = []
+    failed = []
+    total = len(tickers)
+
+    for i, ticker in enumerate(tickers, start=1):
+        # Progress indicator — useful when downloading 500 stocks
+        print(f"[{i:3d}/{total}] Downloading {ticker}...", end=" ")
+
+        try:
+            download_and_store(ticker, period=period)
+            successful.append(ticker)
+            print("OK")
+        except Exception as e:
+            failed.append(ticker)
+            print(f"FAILED ({type(e).__name__})")
+
+    # Summary
+    print()
+    print("=" * 60)
+    print(f"Download complete: {len(successful)}/{total} successful")
+    if failed:
+        print(f"Failed tickers ({len(failed)}): {', '.join(failed[:20])}")
+        if len(failed) > 20:
+            print(f"  ...and {len(failed) - 20} more")
+    print("=" * 60)
+
+    return {
+        "successful": successful,
+        "failed": failed,
+        "total": total,
+    }
